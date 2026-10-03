@@ -12,7 +12,7 @@
 
   document.querySelectorAll(".bag-button").forEach(button => {
     button.addEventListener("click", () => {
-      alert("Bag and checkout will connect to Shopify after Louie's store is set up.");
+      alert("TRAX Drop 001 isn't live yet. Checkout opens with the launch.");
     });
   });
 
@@ -59,7 +59,7 @@
 
     detail.innerHTML = `
       <div class="detail-image">
-        <img src="assets/logo-black.svg" alt="TRAX placeholder product artwork">
+        <img src="assets/logo-black.svg" alt="TRAX product artwork">
         <span class="detail-index">TRAX-LDN / ${product.category.toUpperCase()}</span>
       </div>
       <div class="detail-info">
@@ -67,17 +67,17 @@
         <p class="eyebrow dark">${product.tag}</p>
         <h1>${product.name}</h1>
         <p class="detail-price">£${product.price}.00</p>
-        <p class="detail-copy">Prototype product page. Final photography, description, materials, sizing and stock will come from the real TRAX catalogue / Shopify data.</p>
+        <p class="detail-copy">Part of TRAX Drop 001. Full fabric, fit and release details land with the collection.</p>
         <div class="size-block">
           <span>SIZE</span>
           <div class="size-options">
             ${product.sizes.map((size, i) => `<button class="size-option ${i===0 ? "selected" : ""}" type="button">${size}</button>`).join("")}
           </div>
         </div>
-        <button class="buy-button" type="button" ${product.status === "coming-soon" ? "disabled" : ""}>
-          ${product.status === "coming-soon" ? "COMING SOON" : "ADD TO BAG — TEST ONLY"}
+        <button class="buy-button" type="button">
+          ${product.status === "coming-soon" ? "COMING SOON" : "DROP 001 — COMING SOON"}
         </button>
-        <p class="checkout-note">Checkout is intentionally disabled until Shopify is connected.</p>
+        <p class="checkout-note">Release details and checkout go live with Drop 001.</p>
       </div>
     `;
 
@@ -88,10 +88,10 @@
       });
     });
 
-    const buyButton = detail.querySelector(".buy-button:not([disabled])");
+    const buyButton = detail.querySelector(".buy-button");
     if (buyButton) {
       buyButton.addEventListener("click", () => {
-        alert("Product flow works. Shopify checkout is the next integration step.");
+        alert("Drop 001 isn't live yet. Release details and checkout are coming soon.");
       });
     }
   }
