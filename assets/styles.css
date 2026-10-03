@@ -127,28 +127,67 @@ footer div{display:flex;justify-content:space-between;border-top:1px solid #444;
   .detail-image{min-height:58vh;border-right:0;border-bottom:1px solid #111}
 }
 @media(max-width:700px){
+  body{overflow-x:hidden}
   .site-header{height:76px;padding:15px 18px}
   .brand{width:92px}
   .nav-toggle{display:block}
   .site-nav{display:none;position:absolute;left:0;right:0;top:76px;background:#0b0b0b;color:#fff;padding:22px 18px;flex-direction:column;align-items:flex-start;border-top:1px solid #444}
   .light-header .site-nav{background:var(--paper);color:#111;border-color:#111}
   .nav-open .site-nav{display:flex}
-  .hero{padding:120px 22px 45px;min-height:760px}
-  .hero>.eyebrow{top:106px;left:22px}
-  .hero-cta{top:auto;right:auto;left:22px;bottom:110px}
-  .hero-logo{width:96vw;max-width:none;margin-left:-8vw}
-  .hero-copy{font-size:10px;flex-direction:column;margin-bottom:100px}
-  .scribble-one{top:30%;left:5%}.scribble-two{bottom:34%;right:4%}
-  .collage{height:1180px}
-  .collage-intro{left:20px;right:20px;top:48px;width:auto}
-  .collage-intro h1{font-size:56px}
-  .cutout-tee{right:4%;top:340px;width:220px}
-  .cutout-beanie{left:-10px;bottom:315px;width:180px}
-  .cutout-hoodie{left:19%;bottom:40px;width:245px}
-  .cutout-jeans{right:-25px;bottom:210px;width:145px}
-  .sticker-round{right:8%;top:57%;width:76px;height:76px;font-size:16px}
-  .sticker-x{left:7%;top:52%;font-size:70px}
-  .collage-note{top:280px;right:18px}
+
+  /* Phone-only hero layout. Tablet/desktop rules above are untouched. */
+  .hero{min-height:760px;height:100svh;padding:110px 20px 36px}
+  .hero>.eyebrow{top:104px;left:20px;font-size:10px;white-space:nowrap}
+  .hero-logo{width:106vw;max-width:none;margin-left:-8vw;transform:rotate(-2deg)}
+  .hero-copy{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:132px;
+    margin:0;
+    display:flex;
+    flex-direction:row;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
+    font-size:9px;
+    line-height:1.2;
+  }
+  .hero-copy span:last-child{text-align:right}
+  .hero-cta{top:auto;right:auto;left:20px;bottom:42px;padding:15px 17px}
+  .scribble-one{top:29%;left:5%}
+  .scribble-two{right:4%;bottom:31%;font-size:10px}
+  .line-one{right:-14vw;top:43%;width:60vw}
+  .line-two{left:-14vw;bottom:21%;width:55vw}
+
+  /* Recompose the editorial collage for a narrow screen instead of shrinking desktop art. */
+  .collage{height:980px}
+  .collage-intro{left:20px;right:20px;top:42px;width:auto}
+  .collage-intro h1{font-size:46px;line-height:.88;margin-bottom:18px}
+  .collage-intro p:last-child{font-size:12px;line-height:1.45;max-width:290px}
+
+  .cutout-tee{left:8%;right:auto;top:300px;width:178px;transform:rotate(-5deg)}
+  .cutout-jeans{right:-8px;top:390px;bottom:auto;width:112px;transform:rotate(-6deg)}
+  .cutout-beanie{left:-12px;top:585px;bottom:auto;width:150px;transform:rotate(-9deg)}
+  .cutout-hoodie{left:auto;right:6%;bottom:32px;width:205px;transform:rotate(5deg)}
+
+  .tee-shape{height:auto;aspect-ratio:31/32}
+  .jeans-shape{height:auto;aspect-ratio:1/2;font-size:20px;padding-top:22px}
+  .beanie-shape{height:auto;aspect-ratio:260/205}
+  .hoodie-shape{height:auto;aspect-ratio:345/370}
+
+  .tape,.paper-label,.marker-label,.pin-label{font-size:9px;padding:7px 9px;white-space:nowrap}
+  .tape{left:27%;bottom:-5px}
+  .marker-label{right:-24px;top:23px}
+  .pin-label{left:-42px;top:35%}
+  .paper-label{right:-5px;bottom:10px}
+
+  .sticker-round{right:7%;top:61%;width:68px;height:68px;font-size:14px}
+  .sticker-x{left:34%;top:58%;font-size:62px}
+  .collage-note{top:248px;right:16px;font-size:9px;padding:8px 10px}
+  .rule-a{left:-20%;top:56%;width:72%}
+  .rule-b{right:-18%;bottom:22%;width:66%}
+
   .shop-strip{align-items:flex-start;flex-direction:column;gap:16px}
   .products-page{padding:50px 15px 90px}
   .products-heading{display:block}
