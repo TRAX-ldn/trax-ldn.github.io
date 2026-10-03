@@ -1,0 +1,161 @@
+:root{
+  --ink:#0a0a0a;
+  --paper:#f3f1eb;
+  --white:#fff;
+  --acid:#d9ff43;
+  --line:#b7b4ad;
+  --red:#ee3b2f;
+  --max:1500px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-weight:700}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.site-header{height:92px;padding:18px clamp(18px,4vw,58px);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:50;border-bottom:1px solid currentColor}
+.dark-header{position:absolute;inset:0 0 auto;color:#fff;border-color:rgba(255,255,255,.25)}
+.light-header{background:var(--paper)}
+.brand{width:118px;display:block}
+.brand img{width:100%;display:block}
+.site-nav{display:flex;gap:28px;align-items:center;font-size:12px;letter-spacing:.14em}
+.site-nav a,.bag-button{position:relative}
+.site-nav a:after{content:"";position:absolute;height:2px;background:currentColor;left:0;right:100%;bottom:-7px;transition:.2s}
+.site-nav a:hover:after,.site-nav a.active:after{right:0}
+.bag-button{border:0;background:transparent;color:inherit;padding:0;cursor:pointer}
+.nav-toggle{display:none;border:0;background:transparent;color:inherit;font-size:12px;letter-spacing:.14em}
+
+.hero{min-height:100vh;background:#080808;color:#fff;position:relative;overflow:hidden;padding:160px clamp(22px,6vw,96px) 70px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-noise{position:absolute;inset:0;opacity:.16;background-image:radial-gradient(circle at 25% 30%,#fff 0 1px,transparent 1.3px),radial-gradient(circle at 70% 60%,#fff 0 .8px,transparent 1px);background-size:17px 19px,23px 29px;mix-blend-mode:screen}
+.eyebrow{font-size:11px;letter-spacing:.18em;margin:0 0 18px;position:relative;z-index:2}
+.eyebrow.dark{color:#383838}
+.hero>.eyebrow{position:absolute;top:130px;left:clamp(22px,6vw,96px)}
+.hero-logo{width:min(78vw,1050px);position:relative;z-index:2;transform:rotate(-2deg);filter:drop-shadow(10px 12px 0 rgba(255,255,255,.07))}
+.hero-copy{display:flex;justify-content:space-between;gap:20px;font-size:clamp(12px,1.1vw,17px);letter-spacing:.12em;margin-top:24px;position:relative;z-index:3}
+.hero-cta{position:absolute;right:clamp(22px,6vw,96px);top:145px;background:var(--acid);color:#000;padding:15px 18px;transform:rotate(3deg);font-size:12px;letter-spacing:.08em;z-index:5}
+.hero-line{position:absolute;background:#fff;height:2px;width:48vw;opacity:.75;z-index:1}
+.line-one{right:-8vw;top:42%;transform:rotate(-19deg)}
+.line-two{left:-12vw;bottom:24%;transform:rotate(13deg)}
+.scribble{position:absolute;font-family:"Courier New",monospace;font-size:12px;border:1px solid #fff;padding:8px 10px;z-index:4}
+.scribble-one{left:7vw;top:31%;transform:rotate(-8deg)}
+.scribble-two{right:9vw;bottom:23%;transform:rotate(8deg)}
+
+.collage{height:980px;position:relative;overflow:hidden;background:#ece9e1;border-bottom:1px solid #111}
+.collage-intro{position:absolute;left:5vw;top:75px;width:min(430px,42vw);z-index:10}
+.collage-intro h1{font-size:clamp(42px,6vw,94px);line-height:.85;letter-spacing:-.06em;margin:0 0 24px}
+.collage-intro p:last-child{font-size:14px;line-height:1.55;max-width:360px}
+.cutout{position:absolute;display:block;transition:transform .18s ease;z-index:5}
+.cutout:hover{transform:scale(1.025) rotate(0deg)!important;z-index:20}
+.cutout-tee{left:49%;top:88px;width:310px;transform:rotate(7deg)}
+.cutout-jeans{right:5%;top:330px;width:235px;transform:rotate(-8deg)}
+.cutout-beanie{left:12%;bottom:80px;width:260px;transform:rotate(-11deg)}
+.cutout-hoodie{left:42%;bottom:80px;width:345px;transform:rotate(5deg)}
+.garment{position:relative;display:flex;align-items:center;justify-content:center;filter:drop-shadow(13px 14px 0 rgba(0,0,0,.14))}
+.garment img{max-width:62%;max-height:44%}
+.tee-shape{height:320px;background:#fff;clip-path:polygon(20% 8%,36% 0,43% 11%,57% 11%,64% 0,80% 8%,100% 27%,86% 44%,77% 37%,79% 100%,21% 100%,23% 37%,14% 44%,0 27%)}
+.hoodie-shape{height:370px;background:#c9c7c1;clip-path:polygon(38% 0,62% 0,73% 10%,81% 13%,100% 34%,89% 49%,80% 43%,83% 100%,17% 100%,20% 43%,11% 49%,0 34%,19% 13%,27% 10%)}
+.jeans-shape{height:470px;background:#35383e;clip-path:polygon(17% 0,83% 0,78% 42%,94% 100%,59% 100%,50% 55%,41% 100%,6% 100%,22% 42%);color:#fff;font-size:36px;letter-spacing:.1em;align-items:flex-start;padding-top:42px}
+.beanie-shape{height:205px;background:#121212;clip-path:ellipse(49% 49% at 50% 51%)}
+.tape,.paper-label,.marker-label,.pin-label{position:absolute;padding:8px 11px;font-size:11px;letter-spacing:.11em;z-index:9}
+.tape{background:#dbff49;left:34%;bottom:-4px;transform:rotate(-5deg)}
+.paper-label{background:#fff;right:-20px;bottom:15px;transform:rotate(-4deg);border:1px solid #111}
+.marker-label{color:#fff;background:#111;right:-35px;top:30px;transform:rotate(9deg)}
+.pin-label{background:#e93f34;color:#fff;left:-40px;top:36%;transform:rotate(-7deg)}
+.sticker{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;z-index:3}
+.sticker-round{right:25%;top:45%;width:100px;height:100px;border-radius:50%;background:var(--acid);font-size:22px;transform:rotate(11deg)}
+.sticker-x{left:34%;top:48%;font-size:110px;line-height:1;transform:rotate(-12deg);font-family:Impact,sans-serif}
+.collage-rule{position:absolute;height:3px;background:#111;width:55%;z-index:1}
+.rule-a{left:-8%;top:52%;transform:rotate(19deg)}
+.rule-b{right:-10%;bottom:23%;transform:rotate(-13deg)}
+.collage-note{position:absolute;right:4vw;top:98px;border:2px solid #111;padding:12px 16px;transform:rotate(4deg);font-family:"Courier New",monospace;font-size:12px}
+.shop-strip{background:#111;color:#fff;min-height:112px;display:flex;align-items:center;justify-content:space-between;padding:30px 5vw;font-size:clamp(18px,2vw,30px);letter-spacing:-.03em}
+.shop-strip p{margin:0}
+.shop-strip a{border-bottom:2px solid #fff}
+.about-block{padding:110px 5vw 130px;max-width:1200px}
+.about-block h2{font-size:clamp(42px,6vw,86px);line-height:.92;letter-spacing:-.055em;margin:0 0 30px}
+.about-block>p:last-child{max-width:720px;font-size:17px;line-height:1.55;font-weight:600}
+
+.products-page{min-height:80vh;padding:70px clamp(18px,4vw,58px) 120px}
+.products-heading{display:grid;grid-template-columns:1fr auto;align-items:end;gap:12px;border-bottom:2px solid #111;padding-bottom:24px}
+.products-heading .eyebrow{grid-column:1/-1}
+.products-heading h1{font-size:clamp(64px,12vw,175px);line-height:.75;letter-spacing:-.07em;margin:0}
+.prototype-note{font-family:"Courier New",monospace;font-size:10px;max-width:250px;line-height:1.45;margin:0 0 6px}
+.filter-bar{display:flex;flex-wrap:wrap;gap:9px;padding:28px 0 34px}
+.filter{border:1px solid #111;background:transparent;padding:10px 14px;font-size:11px;letter-spacing:.09em;cursor:pointer}
+.filter:hover,.filter.active{background:#111;color:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 16px}
+.product-card{opacity:0;animation:cardIn .35s ease forwards;animation-delay:var(--delay)}
+.product-image{aspect-ratio:4/5;background:#e7e4dc;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #d2cec5}
+.product-image:before{content:"";position:absolute;width:130%;height:1px;background:#aaa;transform:rotate(-35deg)}
+.product-image img{width:65%;position:relative;z-index:2}
+.product-stamp{position:absolute;top:14px;left:14px;background:#111;color:#fff;padding:7px 9px;font-size:9px;letter-spacing:.12em;z-index:4}
+.product-card-meta{display:flex;justify-content:space-between;gap:12px;padding-top:11px;font-size:11px;letter-spacing:.08em}
+.product-card-meta h2{font-size:12px;margin:0}
+.product-card-meta span{font-size:9px;color:#555}
+.product-card:hover .product-image img{transform:rotate(-3deg) scale(1.05)}
+.product-card .product-image img{transition:.25s ease}
+@keyframes cardIn{to{opacity:1}}
+
+.product-detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,.7fr);min-height:calc(100vh - 92px)}
+.detail-image{background:#e5e2da;min-height:720px;position:relative;display:flex;align-items:center;justify-content:center;border-right:1px solid #111}
+.detail-image img{width:min(65%,680px)}
+.detail-index{position:absolute;left:24px;bottom:22px;font-size:10px;letter-spacing:.14em}
+.detail-info{padding:70px clamp(26px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
+.back-link{font-size:10px;letter-spacing:.1em;margin-bottom:70px}
+.detail-info h1{font-size:clamp(44px,6vw,86px);line-height:.9;letter-spacing:-.05em;margin:0 0 20px}
+.detail-price{font-size:26px;margin:0 0 32px}
+.detail-copy{font-weight:500;line-height:1.55;font-size:14px;max-width:510px;margin-bottom:38px}
+.size-block>span{font-size:10px;letter-spacing:.12em}
+.size-options{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 28px}
+.size-option{min-width:48px;border:1px solid #111;background:transparent;padding:11px 12px;cursor:pointer}
+.size-option.selected{background:#111;color:#fff}
+.buy-button{border:0;background:#111;color:#fff;padding:18px 20px;width:100%;cursor:pointer;letter-spacing:.08em}
+.buy-button:disabled{background:#9a9892;cursor:not-allowed}
+.checkout-note{font-size:10px;font-family:"Courier New",monospace;font-weight:400;line-height:1.4}
+
+footer{background:#090909;color:#fff;padding:55px clamp(18px,4vw,58px) 30px}
+footer img{width:min(420px,62vw);display:block;margin-bottom:45px}
+footer div{display:flex;justify-content:space-between;border-top:1px solid #444;padding-top:18px;font-size:10px;letter-spacing:.12em}
+
+@media(max-width:980px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .collage{height:1100px}
+  .cutout-tee{left:auto;right:5%;top:220px;width:280px}
+  .cutout-jeans{right:7%;top:auto;bottom:80px;width:190px}
+  .cutout-beanie{left:6%;bottom:180px;width:220px}
+  .cutout-hoodie{left:32%;bottom:30px;width:300px}
+  .product-detail{grid-template-columns:1fr}
+  .detail-image{min-height:58vh;border-right:0;border-bottom:1px solid #111}
+}
+@media(max-width:700px){
+  .site-header{height:76px;padding:15px 18px}
+  .brand{width:92px}
+  .nav-toggle{display:block}
+  .site-nav{display:none;position:absolute;left:0;right:0;top:76px;background:#0b0b0b;color:#fff;padding:22px 18px;flex-direction:column;align-items:flex-start;border-top:1px solid #444}
+  .light-header .site-nav{background:var(--paper);color:#111;border-color:#111}
+  .nav-open .site-nav{display:flex}
+  .hero{padding:120px 22px 45px;min-height:760px}
+  .hero>.eyebrow{top:106px;left:22px}
+  .hero-cta{top:auto;right:auto;left:22px;bottom:110px}
+  .hero-logo{width:96vw;max-width:none;margin-left:-8vw}
+  .hero-copy{font-size:10px;flex-direction:column;margin-bottom:100px}
+  .scribble-one{top:30%;left:5%}.scribble-two{bottom:34%;right:4%}
+  .collage{height:1180px}
+  .collage-intro{left:20px;right:20px;top:48px;width:auto}
+  .collage-intro h1{font-size:56px}
+  .cutout-tee{right:4%;top:340px;width:220px}
+  .cutout-beanie{left:-10px;bottom:315px;width:180px}
+  .cutout-hoodie{left:19%;bottom:40px;width:245px}
+  .cutout-jeans{right:-25px;bottom:210px;width:145px}
+  .sticker-round{right:8%;top:57%;width:76px;height:76px;font-size:16px}
+  .sticker-x{left:7%;top:52%;font-size:70px}
+  .collage-note{top:280px;right:18px}
+  .shop-strip{align-items:flex-start;flex-direction:column;gap:16px}
+  .products-page{padding:50px 15px 90px}
+  .products-heading{display:block}
+  .products-heading h1{font-size:72px;margin-bottom:20px}
+  .product-grid{gap:24px 8px}
+  .product-card-meta{display:block}
+  .product-card-meta span{display:block;margin-top:5px}
+  .detail-info{padding:45px 20px 70px}
+  .back-link{margin-bottom:45px}
+}

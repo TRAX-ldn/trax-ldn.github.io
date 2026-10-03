@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Shop TRAX-LDN.">
+  <title>Products — TRAX-LDN</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header light-header">
+    <a class="brand" href="index.html" aria-label="TRAX home"><img src="assets/logo-black.svg" alt="TRAX"></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
+      <a class="active" href="products.html">PRODUCTS</a>
+      <a href="index.html#about">ABOUT</a>
+      <button class="bag-button" type="button">BAG <span>0</span></button>
+    </nav>
+  </header>
+
+  <main class="products-page">
+    <section class="products-heading">
+      <p class="eyebrow dark">TRAX-LDN / PRODUCT INDEX</p>
+      <h1>PRODUCTS</h1>
+      <p class="prototype-note">V0.1 PLACEHOLDERS — PRODUCT DATA WILL MOVE TO SHOPIFY LATER.</p>
+    </section>
+
+    <section class="filter-bar" aria-label="Product filters">
+      <button class="filter active" data-filter="all">ALL</button>
+      <button class="filter" data-filter="tees">TEES</button>
+      <button class="filter" data-filter="jeans">JEANS</button>
+      <button class="filter" data-filter="beanies">BEANIES</button>
+      <button class="filter" data-filter="hoodies">HOODIES</button>
+      <button class="filter" data-filter="accessories">ACCESSORIES</button>
+      <button class="filter" data-filter="coming-soon">COMING SOON</button>
+    </section>
+
+    <section id="product-grid" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <img src="assets/logo-white.svg" alt="TRAX">
+    <div><span>TRAX-LDN</span><span>© 2026</span></div>
+  </footer>
+
+  <script src="assets/products.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
