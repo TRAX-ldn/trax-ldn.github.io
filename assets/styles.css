@@ -135,58 +135,86 @@ footer div{display:flex;justify-content:space-between;border-top:1px solid #444;
   .light-header .site-nav{background:var(--paper);color:#111;border-color:#111}
   .nav-open .site-nav{display:flex}
 
-  /* Phone-only hero layout. Tablet/desktop rules above are untouched. */
-  .hero{min-height:760px;height:100svh;padding:110px 20px 36px}
-  .hero>.eyebrow{top:104px;left:20px;font-size:10px;white-space:nowrap}
-  .hero-logo{width:106vw;max-width:none;margin-left:-8vw;transform:rotate(-2deg)}
+  /* Phone-only hero: position by viewport height so Instagram/Safari chrome cannot crush the composition. */
+  .hero{
+    min-height:700px;
+    height:100dvh;
+    padding:0 20px;
+    justify-content:initial;
+  }
+  .hero>.eyebrow{
+    top:96px;
+    left:20px;
+    font-size:9px;
+    letter-spacing:.15em;
+    white-space:nowrap;
+  }
+  .hero-logo{
+    position:absolute;
+    left:50%;
+    top:57%;
+    width:96vw;
+    max-width:none;
+    margin:0;
+    transform:translate(-50%,-50%) rotate(-2deg);
+  }
   .hero-copy{
     position:absolute;
     left:20px;
     right:20px;
-    bottom:132px;
+    bottom:136px;
     margin:0;
     display:flex;
     flex-direction:row;
     align-items:flex-end;
     justify-content:space-between;
-    gap:14px;
-    font-size:9px;
-    line-height:1.2;
+    gap:10px;
+    font-size:8px;
+    line-height:1.15;
+    letter-spacing:.1em;
   }
   .hero-copy span:last-child{text-align:right}
-  .hero-cta{top:auto;right:auto;left:20px;bottom:42px;padding:15px 17px}
-  .scribble-one{top:29%;left:5%}
-  .scribble-two{right:4%;bottom:31%;font-size:10px}
-  .line-one{right:-14vw;top:43%;width:60vw}
-  .line-two{left:-14vw;bottom:21%;width:55vw}
+  .hero-cta{
+    top:auto;
+    right:auto;
+    left:20px;
+    bottom:52px;
+    padding:14px 16px;
+    font-size:11px;
+  }
+  .scribble-one{top:24%;left:5%;font-size:10px}
+  .scribble-two{right:4%;bottom:28%;font-size:9px}
+  .line-one{right:-12vw;top:37%;width:58vw}
+  .line-two{left:-14vw;bottom:20%;width:54vw}
 
-  /* Recompose the editorial collage for a narrow screen instead of shrinking desktop art. */
-  .collage{height:980px}
-  .collage-intro{left:20px;right:20px;top:42px;width:auto}
-  .collage-intro h1{font-size:46px;line-height:.88;margin-bottom:18px}
-  .collage-intro p:last-child{font-size:12px;line-height:1.45;max-width:290px}
+  /* Phone-only collage: keep the DIY overlap, but stop the cutouts filling the whole viewport. */
+  .collage{height:900px}
+  .collage-intro{left:20px;right:20px;top:38px;width:auto}
+  .collage-intro h1{font-size:42px;line-height:.9;margin-bottom:14px}
+  .collage-intro p:last-child{font-size:11px;line-height:1.4;max-width:270px}
 
-  .cutout-tee{left:8%;right:auto;top:300px;width:178px;transform:rotate(-5deg)}
-  .cutout-jeans{right:-8px;top:390px;bottom:auto;width:112px;transform:rotate(-6deg)}
-  .cutout-beanie{left:-12px;top:585px;bottom:auto;width:150px;transform:rotate(-9deg)}
-  .cutout-hoodie{left:auto;right:6%;bottom:32px;width:205px;transform:rotate(5deg)}
+  .collage-note{top:220px;right:15px;font-size:8px;padding:7px 9px}
+
+  .cutout-tee{left:8%;right:auto;top:300px;width:145px;transform:rotate(-5deg)}
+  .cutout-jeans{right:8px;top:350px;bottom:auto;width:86px;transform:rotate(-6deg)}
+  .cutout-beanie{left:-6px;top:535px;bottom:auto;width:126px;transform:rotate(-9deg)}
+  .cutout-hoodie{left:auto;right:7%;bottom:36px;width:162px;transform:rotate(5deg)}
 
   .tee-shape{height:auto;aspect-ratio:31/32}
-  .jeans-shape{height:auto;aspect-ratio:1/2;font-size:20px;padding-top:22px}
+  .jeans-shape{height:auto;aspect-ratio:1/2;font-size:16px;padding-top:18px}
   .beanie-shape{height:auto;aspect-ratio:260/205}
   .hoodie-shape{height:auto;aspect-ratio:345/370}
 
-  .tape,.paper-label,.marker-label,.pin-label{font-size:9px;padding:7px 9px;white-space:nowrap}
-  .tape{left:27%;bottom:-5px}
-  .marker-label{right:-24px;top:23px}
-  .pin-label{left:-42px;top:35%}
-  .paper-label{right:-5px;bottom:10px}
+  .tape,.paper-label,.marker-label,.pin-label{font-size:8px;padding:6px 8px;white-space:nowrap}
+  .tape{left:23%;bottom:-4px}
+  .marker-label{right:-20px;top:18px}
+  .pin-label{left:-35px;top:35%}
+  .paper-label{right:-4px;bottom:8px}
 
-  .sticker-round{right:7%;top:61%;width:68px;height:68px;font-size:14px}
-  .sticker-x{left:34%;top:58%;font-size:62px}
-  .collage-note{top:248px;right:16px;font-size:9px;padding:8px 10px}
-  .rule-a{left:-20%;top:56%;width:72%}
-  .rule-b{right:-18%;bottom:22%;width:66%}
+  .sticker-round{right:8%;top:62%;width:56px;height:56px;font-size:11px}
+  .sticker-x{left:37%;top:58%;font-size:50px}
+  .rule-a{left:-18%;top:55%;width:68%}
+  .rule-b{right:-18%;bottom:22%;width:64%}
 
   .shop-strip{align-items:flex-start;flex-direction:column;gap:16px}
   .products-page{padding:50px 15px 90px}
